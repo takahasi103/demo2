@@ -11,4 +11,9 @@ public class UserPageController {
 	public String userPage() {
 		return "userPage";
 	}
+	
+	@GetMapping("/newuser")
+	public String getNewUser() {
+		return "newuser";
+	}
 }
