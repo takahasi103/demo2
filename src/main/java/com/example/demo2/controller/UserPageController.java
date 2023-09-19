@@ -4,6 +4,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo2.data.entity.Users;
 
@@ -20,5 +21,10 @@ public class UserPageController {
 		Users user = new Users();
 		model.addAttribute("user", user);
 		return "newuser";
+	}
+	
+	@PostMapping("/newuser")
+	public String registerUser(Users user) {
+		return "redirect:/login";
 	}
 }
