@@ -5,7 +5,26 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	</head>
 	<body>
-		<form th:object="${user}">
-		</form>
+		<form th:object="${user} th:action="@{/newuser}" th:method="post">
+			<table>
+				<tr>
+					<th>ユーザー名</th>
+					<td><input type="text" th:field="*{userName}"></td>
+				</tr>
+				<tr>
+					<th>パスワード</th>
+					<td><input type="password" th:field="*{password}"></td>
+				</tr>
+				<tr>
+					<th>名前</th>
+					<td><input type="text" th:field="*{name}"></td>
+				</tr>
+				<tr>
+					<th>ロール名</th>
+					<td><input type="text" th:field="*{roleName}"></td>
+				</tr>
+			</table>
+		<input type="submit" value="登録">
+	</form>
 	</body>
 </html>
