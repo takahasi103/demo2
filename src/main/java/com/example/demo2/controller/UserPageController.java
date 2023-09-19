@@ -2,7 +2,10 @@ package com.example.demo2.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.demo2.data.entity.Users;
 
 @Controller
 public class UserPageController {
@@ -13,7 +16,9 @@ public class UserPageController {
 	}
 	
 	@GetMapping("/newuser")
-	public String getNewUser() {
+	public String getNewUser(Model model) {
+		Users user = new Users();
+		model.addAttribute("user", user);
 		return "newuser";
 	}
 }
